@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="root_layout_padding_top">16dp</dimen>
+    <dimen name="root_layout_padding_bottom">32dp</dimen>
+    <dimen name="score_margin_top">16dp</dimen>
+    <dimen name="score_margin_bottom">16dp</dimen>
+    <dimen name="score_padding">12dp</dimen>
+    <dimen name="team_padding">8dp</dimen>
+    <dimen name="team_margin">8dp</dimen>
+    <dimen name="button_padding">4dp</dimen>
+    <dimen name="button_margin_top">4dp</dimen>
+    <dimen name="button_margin_bottom">4dp</dimen>
+    <dimen name="button_margin_right">24dp</dimen>
+    <dimen name="button_margin_left">24dp</dimen>
+    <dimen name="reset_button_margin_top">32dp</dimen>
+    <dimen name="score_font_size">56sp</dimen>
+    <dimen name="team_font_size">14sp</dimen>
+    <dimen name="score_input_font_size">28sp</dimen>
+    <dimen name="score_input_margin">12dp</dimen>
+    <dimen name="icons_dimens">32dp</dimen>
+</resources>

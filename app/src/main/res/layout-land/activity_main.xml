@@ -1,0 +1,226 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/scrabble_app_background_landscape"
+    android:fillViewport="true"
+    android:paddingBottom="@dimen/root_layout_padding_bottom"
+    android:paddingTop="@dimen/root_layout_padding_top"
+    tools:context="co.elisavet.scorekeeper.MainActivity">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <LinearLayout
+            android:id="@+id/linear_layout_1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:orientation="vertical">
+
+                <TextView
+                    style="@style/teamsStyle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/TeamAName" />
+
+                <TextView
+                    android:id="@+id/player_a_score"
+                    style="@style/scoreStyle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center" />
+
+            </LinearLayout>
+
+            <View
+                android:layout_width="1dp"
+                android:layout_height="match_parent"
+                android:background="@color/colorScoresBackground" />
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:orientation="vertical">
+
+                <TextView
+                    style="@style/teamsStyle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/TeamBName" />
+
+                <TextView
+                    android:id="@+id/player_b_score"
+                    style="@style/scoreStyle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center" />
+            </LinearLayout>
+
+            <View
+                android:layout_width="1dp"
+                android:layout_height="match_parent"
+                android:background="@color/colorButtonNormal" />
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:orientation="vertical">
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center">
+
+                    <TextView
+                        android:id="@+id/player_a_name"
+                        style="@style/teamsStyle"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/TeamAName" />
+
+                    <ImageView
+                        android:id="@+id/player_a_icon"
+                        android:layout_width="@dimen/icons_dimens"
+                        android:layout_height="@dimen/icons_dimens"
+                        android:layout_toEndOf="@id/player_a_name"
+                        android:layout_toRightOf="@id/player_a_name"
+                        android:background="@color/colorScoresBackground"
+                        android:src="@drawable/player_go" />
+
+                </RelativeLayout>
+
+                <EditText
+                    android:id="@+id/player_a_add_score"
+                    style="@style/addScoreStyle"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:inputType="numberSigned" />
+
+                <Button
+                    style="@style/buttonsStyle"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:onClick="addPointsForPlayerA"
+                    android:text="@string/add_points" />
+
+                <Button
+                    style="@style/buttonsStyle"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:onClick="addBingoPointsForPlayerA"
+                    android:text="@string/bingo" />
+
+                <Button
+                    style="@style/buttonsStyle"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:onClick="passForPlayerA"
+                    android:text="@string/pass" />
+
+                <Button
+                    style="@style/buttonsStyle"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:onClick="endGamePlayerA"
+                    android:text="@string/end_game" />
+
+            </LinearLayout>
+
+            <View
+                android:layout_width="1dp"
+                android:layout_height="match_parent"
+                android:background="@color/colorScoresBackground"  />
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:orientation="vertical">
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center">
+
+                    <TextView
+                        android:id="@+id/player_b_name"
+                        style="@style/teamsStyle"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/TeamBName" />
+
+                    <ImageView
+                        android:id="@+id/player_b_icon"
+                        android:layout_width="@dimen/icons_dimens"
+                        android:layout_height="@dimen/icons_dimens"
+                        android:layout_toEndOf="@id/player_b_name"
+                        android:layout_toRightOf="@id/player_b_name"
+                        android:background="@color/colorScoresBackground"
+                        android:src="@drawable/player_stop" />
+
+                </RelativeLayout>
+
+                <EditText
+                    android:id="@+id/player_b_add_score"
+                    style="@style/addScoreStyle"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:inputType="numberSigned" />
+
+                <Button
+                    style="@style/buttonsStyle"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:onClick="addPointsForPlayerB"
+                    android:text="@string/add_points" />
+
+                <Button
+                    style="@style/buttonsStyle"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:onClick="addBingoPointsForPlayerB"
+                    android:text="@string/bingo" />
+
+                <Button
+                    style="@style/buttonsStyle"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:onClick="passForPlayerB"
+                    android:text="@string/pass" />
+
+                <Button
+                    style="@style/buttonsStyle"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:onClick="endGamePlayerB"
+                    android:text="@string/end_game" />
+
+            </LinearLayout>
+        </LinearLayout>
+
+        <Button
+            android:id="@+id/button"
+            style="@style/buttonsStyle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/linear_layout_1"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="@dimen/reset_button_margin_top"
+            android:onClick="resetGame"
+            android:text="@string/reset" />
+
+    </RelativeLayout>
+
+</ScrollView>

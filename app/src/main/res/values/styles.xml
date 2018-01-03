@@ -1,0 +1,51 @@
+<resources>
+    <!-- Base application theme. -->
+    <style name="AppTheme" parent="Theme.AppCompat.Light.DarkActionBar">
+        <!-- Customize your theme here. -->
+        <item name="colorPrimary">@color/colorPrimary</item>
+        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
+        <item name="colorAccent">@color/colorAccent</item>
+        <!-- Background color of buttons in the app -->
+        <item name="colorButtonNormal">@color/colorButtonNormal</item>
+    </style>
+
+    <!-- https://developer.android.com/guide/topics/resources/style-resource.html-->
+    <style name="scoreStyle">
+        <item name="android:padding">@dimen/score_padding</item>
+        <item name="android:fontFamily">sans-serif-light</item>
+        <item name="android:textColor">@color/colorScores</item>
+        <item name="android:background">@color/colorScoresBackground</item>
+        <item name="android:textSize">@dimen/score_font_size</item>
+        <item name="android:layout_marginTop">@dimen/score_margin_top</item>
+        <item name="android:layout_marginBottom">@dimen/score_margin_bottom</item>
+   </style>
+
+    <style name="teamsStyle">
+        <item name="android:padding">@dimen/team_padding</item>
+        <item name="android:layout_marginRight">@dimen/team_margin</item>
+        <item name="android:layout_marginLeft">@dimen/team_margin</item>
+        <item name="android:fontFamily">sans-serif-medium</item>
+        <item name="android:textColor">@color/colorTeams</item>
+        <item name="android:background">@color/colorAccent</item>
+        <item name="android:textSize">@dimen/team_font_size</item>
+    </style>
+
+    <style name="addScoreStyle">
+        <item name="android:fontFamily">sans-serif-medium</item>
+        <item name="android:textColor">@color/colorAddScoreText</item>
+        <item name="android:background">@color/colorAddScoreBackground</item>
+        <item name="android:textSize">@dimen/score_input_font_size</item>
+        <item name="android:layout_margin">@dimen/score_input_margin</item>
+
+    </style>
+
+    <style name="buttonsStyle">
+        <item name="android:padding">@dimen/button_padding</item>
+        <item name="android:layout_marginBottom">@dimen/button_margin_bottom</item>
+        <item name="android:layout_marginTop">@dimen/button_margin_top</item>
+        <item name="android:layout_marginRight">@dimen/button_margin_right</item>
+        <item name="android:layout_marginLeft">@dimen/button_margin_left</item>
+        <item name="android:textColor">@color/colorButtonsText</item>
+    </style>
+
+</resources>

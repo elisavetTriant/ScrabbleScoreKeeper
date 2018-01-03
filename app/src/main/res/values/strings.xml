@@ -1,0 +1,15 @@
+<resources>
+    <string name="app_name">Scrabble Score Keeper</string>
+    <string name="TeamAName">Player A</string>
+    <string name="TeamBName">Player B</string>
+    <string name="reset">Reset</string>
+    <string name="add_points">Add Points</string>
+    <string name="bingo">Bingo!</string>
+    <string name="pass">Pass!</string>
+    <string name="end_game">End Game</string>
+    <string name="plus">+</string>
+    <string name="player_a_name">Player A Name</string>
+    <string name="player_b_name">Player B Name</string>
+    <string name="start_game">Start Game</string>
+    <string name="start_game_instructions">Draw from the pouch for first play. The player with the letter closest to \'A\' plays first. A blank tile beats any letter. Player A plays first, Player B second.</string>
+</resources>

@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#616161</color>
+    <color name="colorPrimaryDark">#212121</color>
+    <color name="colorAccent">#0c8e90</color>
+    <color name="colorButtonNormal">#096b6d</color>
+    <color name="colorScores">#0c8e90</color>
+    <color name="colorTeams">#FFFFFF</color>
+    <color name="colorButtonsText">#FFFFFF</color>
+    <color name="colorScoresBackground">#f2ebd9</color>
+    <color name="colorAddScoreText">#096b6d</color>
+    <color name="colorAddScoreBackground">#f2ebd9</color>
+</resources>
