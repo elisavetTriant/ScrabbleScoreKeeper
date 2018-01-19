@@ -20,6 +20,16 @@
         <item name="android:layout_marginBottom">@dimen/score_margin_bottom</item>
    </style>
 
+    <style name="bingoStyle">
+        <item name="android:padding">@dimen/score_padding</item>
+        <item name="android:fontFamily">sans-serif-light</item>
+        <item name="android:textColor">@color/colorScores</item>
+        <item name="android:background">@color/colorScoresBackground</item>
+        <item name="android:textSize">@dimen/score_bingo_size</item>
+        <item name="android:layout_marginTop">@dimen/score_margin_top</item>
+        <item name="android:layout_marginBottom">@dimen/score_margin_bottom</item>
+    </style>
+
     <style name="teamsStyle">
         <item name="android:padding">@dimen/team_padding</item>
         <item name="android:layout_marginRight">@dimen/team_margin</item>

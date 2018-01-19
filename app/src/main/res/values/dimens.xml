@@ -14,6 +14,7 @@
     <dimen name="button_margin_left">24dp</dimen>
     <dimen name="reset_button_margin_top">32dp</dimen>
     <dimen name="score_font_size">56sp</dimen>
+    <dimen name="score_bingo_size">20sp</dimen>
     <dimen name="team_font_size">14sp</dimen>
     <dimen name="score_input_font_size">28sp</dimen>
     <dimen name="score_input_margin">12dp</dimen>

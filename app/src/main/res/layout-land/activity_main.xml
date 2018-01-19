@@ -30,11 +30,24 @@
                     style="@style/teamsStyle"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="@string/TeamAName" />
+                    android:text="@string/player_a_points" />
 
                 <TextView
                     android:id="@+id/player_a_score"
                     style="@style/scoreStyle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center" />
+
+                <TextView
+                    style="@style/teamsStyle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/player_a_bingos" />
+
+                <TextView
+                    android:id="@+id/player_a_bingos"
+                    style="@style/bingoStyle"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center" />
@@ -57,7 +70,7 @@
                     style="@style/teamsStyle"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="@string/TeamBName" />
+                    android:text="@string/player_b_points" />
 
                 <TextView
                     android:id="@+id/player_b_score"
@@ -65,6 +78,20 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center" />
+
+                <TextView
+                    style="@style/teamsStyle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/player_b_bingos" />
+
+                <TextView
+                    android:id="@+id/player_b_bingos"
+                    style="@style/bingoStyle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center" />
+
             </LinearLayout>
 
             <View

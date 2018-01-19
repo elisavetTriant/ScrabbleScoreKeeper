@@ -44,7 +44,7 @@ public class StartGameActivity extends AppCompatActivity {
             //https://developer.android.com/training/basics/firstapp/starting-activity.html
             startActivity(intent);
         } else {
-            displayToastMessage("Please enter your names to start the game!");
+            displayToastMessage(getString(R.string.start_game_message));
         }
 
     }

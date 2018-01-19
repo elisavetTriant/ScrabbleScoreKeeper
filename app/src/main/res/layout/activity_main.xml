@@ -69,6 +69,13 @@
                     android:onClick="addPointsForPlayerA"
                     android:text="@string/add_points" />
 
+                <TextView
+                    android:id="@+id/player_a_bingos"
+                    style="@style/bingoStyle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center" />
+
                 <Button
                     style="@style/buttonsStyle"
                     android:layout_width="match_parent"
@@ -146,6 +153,13 @@
                     android:layout_height="wrap_content"
                     android:onClick="addPointsForPlayerB"
                     android:text="@string/add_points" />
+
+                <TextView
+                    android:id="@+id/player_b_bingos"
+                    style="@style/bingoStyle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center" />
 
                 <Button
                     style="@style/buttonsStyle"

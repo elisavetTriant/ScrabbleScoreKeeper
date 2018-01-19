@@ -9,7 +9,6 @@ import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
-//import android.util.Log;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -18,6 +17,8 @@ public class MainActivity extends AppCompatActivity {
     private TextView playerBView;
     private TextView scoreAView;
     private TextView scoreBView;
+    private TextView bingosAView;
+    private TextView bingosBView;
     private EditText scoreAInput;
     private EditText scoreBInput;
     private ImageView playerATurnIcon;
@@ -26,11 +27,15 @@ public class MainActivity extends AppCompatActivity {
     //String constants for keys
     private static final String SCORE_CNT_A = "scorePlayerA";
     private static final String SCORE_CNT_B = "scorePlayerB";
+    private static final String BINGOS_CNT_A = "bingosPlayerA";
+    private static final String BINGOS_CNT_B = "bingosPlayerB";
     private static final String CURRENT_PLAYER_CNT = "currentPlayer";
 
     //Declare and initialize global vars
     private int scorePlayerA = 0;
     private int scorePlayerB = 0;
+    private int bingosPlayerA = 0;
+    private int bingosPlayerB = 0;
     private String currentPlayer = "";
 
     //Player Names
@@ -47,6 +52,8 @@ public class MainActivity extends AppCompatActivity {
         playerBView = (TextView) findViewById(R.id.player_b_name);
         scoreAView = (TextView) findViewById(R.id.player_a_score);
         scoreBView = (TextView) findViewById(R.id.player_b_score);
+        bingosAView = (TextView) findViewById(R.id.player_a_bingos);
+        bingosBView = (TextView) findViewById(R.id.player_b_bingos);
         scoreAInput = (EditText) findViewById(R.id.player_a_add_score);
         scoreBInput = (EditText) findViewById(R.id.player_b_add_score);
         playerATurnIcon = (ImageView) findViewById(R.id.player_a_icon);
@@ -63,6 +70,8 @@ public class MainActivity extends AppCompatActivity {
         //Display initial global values
         displayForPlayerA(scorePlayerA);
         displayForPlayerB(scorePlayerB);
+        displayBingosForPlayerA(bingosPlayerA);
+        displayBingosForPlayerB(bingosPlayerB);
         displayCurrentPlayer(currentPlayer);
         displayPlayersNames(playerAName, playerBName);
     }
@@ -78,6 +87,8 @@ public class MainActivity extends AppCompatActivity {
         // killed and restarted.
         savedInstanceState.putInt(SCORE_CNT_A, scorePlayerA);
         savedInstanceState.putInt(SCORE_CNT_B, scorePlayerB);
+        savedInstanceState.putInt(BINGOS_CNT_A, bingosPlayerA);
+        savedInstanceState.putInt(BINGOS_CNT_B, bingosPlayerB);
         savedInstanceState.putString(CURRENT_PLAYER_CNT, currentPlayer);
     }
 
@@ -89,10 +100,14 @@ public class MainActivity extends AppCompatActivity {
         // This bundle has also been passed to onCreate.
         scorePlayerA = savedInstanceState.getInt(SCORE_CNT_A);
         scorePlayerB = savedInstanceState.getInt(SCORE_CNT_B);
+        bingosPlayerA = savedInstanceState.getInt(BINGOS_CNT_A);
+        bingosPlayerB = savedInstanceState.getInt(BINGOS_CNT_B);
         currentPlayer = savedInstanceState.getString(CURRENT_PLAYER_CNT);
         //Display saved global vars values
         displayForPlayerA(scorePlayerA);
         displayForPlayerB(scorePlayerB);
+        displayBingosForPlayerA(bingosPlayerA);
+        displayBingosForPlayerB(bingosPlayerB);
         displayCurrentPlayer(currentPlayer);
     }
 
@@ -113,27 +128,29 @@ public class MainActivity extends AppCompatActivity {
                 displayForPlayerA(scorePlayerA);
                 switchPlayer(playerAName);
             } else {
-                displayToastMessage("Please enter a number!");
+                displayToastMessage(getString(R.string.enter_number_message));
             }
         } else {
-            displayToastMessage("Please wait for your turn.");
+            displayToastMessage(getString(R.string.turn_message));
         }
 
     }
 
     /**
      * BINGO! If a player plays seven tiles on a turn, it's a Bingo.  Let’s add a premium of 50 points!
-     * Increase the score for Player A by 50 points.
+     * Increase the score for Player A by 50 points and increase the number of bingos by 1
      *
      * @param v
      */
     public void addBingoPointsForPlayerA(View v) {
         if (currentPlayer.equals(playerAName)) {
+            bingosPlayerA += 1;
+            displayBingosForPlayerA(bingosPlayerA);
             scorePlayerA += 50;
             displayForPlayerA(scorePlayerA);
-            displayToastMessage("A premium of 50 points was added to your score. Now add the score of your turn.");
+            displayToastMessage(getString(R.string.bingo_message));
         } else {
-            displayToastMessage("Please wait for your turn.");
+            displayToastMessage(getString(R.string.turn_message));
         }
     }
 
@@ -147,7 +164,7 @@ public class MainActivity extends AppCompatActivity {
         if (currentPlayer.equals(playerAName)) {
             switchPlayer(playerAName);
         } else {
-            displayToastMessage("Please wait for your turn.");
+            displayToastMessage(getString(R.string.turn_message));
         }
     }
 
@@ -176,7 +193,7 @@ public class MainActivity extends AppCompatActivity {
             displayWinner(scorePlayerA, scorePlayerB, scoreBeforeTilesCountForPlayerA, scoreBeforeTilesCountForPlayerB);
 
         } else {
-            displayToastMessage("Please enter the sum of your un-played tiles, proceeded by minus!");
+            displayToastMessage(getString(R.string.end_game_message));
         }
     }
 
@@ -195,23 +212,25 @@ public class MainActivity extends AppCompatActivity {
                 displayForPlayerB(scorePlayerB);
                 switchPlayer(playerBName);
             } else {
-                displayToastMessage("Please enter a number!");
+                displayToastMessage(getString(R.string.enter_number_message));
             }
         } else {
-            displayToastMessage("Please wait for your turn.");
+            displayToastMessage(getString(R.string.turn_message));
         }
     }
 
     /**
-     * Increase the score for Player A by 50 points.
+     * Increase the score for Player A by 50 points and increase the number of bingos by 1
      */
     public void addBingoPointsForPlayerB(View v) {
         if (currentPlayer.equals(playerBName)) {
+            bingosPlayerB += 1;
+            displayBingosForPlayerB(bingosPlayerB);
             scorePlayerB += 50;
             displayForPlayerB(scorePlayerB);
-            displayToastMessage("A premium of 50 points was added to your score. Now add the score of your turn.");
+            displayToastMessage(getString(R.string.bingo_message));
         } else {
-            displayToastMessage("Please wait for your turn.");
+            displayToastMessage(getString(R.string.turn_message));
         }
     }
 
@@ -226,13 +245,13 @@ public class MainActivity extends AppCompatActivity {
         if (currentPlayer.equals(playerBName)) {
             switchPlayer(playerBName);
         } else {
-            displayToastMessage("Please wait for your turn.");
+            displayToastMessage(getString(R.string.turn_message));
         }
     }
 
     /**
      * Player B has used all of his or her letters,
-     * the sum of the other players' unplayed letters is added to that player's score.
+     * the sum of the other players' un-played letters is added to that player's score.
      * Other player's score is reduced by the sum of his or her unplayed letters
      *
      * @param v
@@ -254,7 +273,7 @@ public class MainActivity extends AppCompatActivity {
             displayForPlayerB(scorePlayerB);
             displayWinner(scorePlayerA, scorePlayerB, scoreBeforeTilesCountForPlayerA, scoreBeforeTilesCountForPlayerB);
         } else {
-            displayToastMessage("Please enter the sum of your un-played tiles, proceeded by minus!");
+            displayToastMessage(getString(R.string.end_game_message));
         }
     }
 
@@ -264,9 +283,13 @@ public class MainActivity extends AppCompatActivity {
     public void resetGame(View v) {
         scorePlayerA = 0;
         scorePlayerB = 0;
+        bingosPlayerA = 0;
+        bingosPlayerB = 0;
         currentPlayer = playerAName;
         displayForPlayerA(scorePlayerA);
         displayForPlayerB(scorePlayerB);
+        displayBingosForPlayerA(bingosPlayerA);
+        displayBingosForPlayerB(bingosPlayerB);
         displayCurrentPlayer(currentPlayer);
         scoreAInput.requestFocus();
         scoreAInput.setText("");
@@ -277,13 +300,11 @@ public class MainActivity extends AppCompatActivity {
     private void switchPlayer(String currentPlayerName) {
         if (currentPlayerName.equals(playerAName)) {
             currentPlayer = playerBName;
-            //Log.v("main", "current Player: " + currentPlayer);
             scoreAInput.setText("");
             scoreBInput.requestFocus();
             displayCurrentPlayer(currentPlayer);
         } else if (currentPlayerName.equals(playerBName)) {
             currentPlayer = playerAName;
-            //Log.v("main", "current Player: " + currentPlayer);
             scoreBInput.setText("");
             scoreAInput.requestFocus();
             displayCurrentPlayer(currentPlayer);
@@ -318,7 +339,7 @@ public class MainActivity extends AppCompatActivity {
             }
         }
 
-        displayToastMessage(winner + " won!");
+        displayToastMessage(getString(R.string.winner, winner));
     }
 
     /**
@@ -333,6 +354,20 @@ public class MainActivity extends AppCompatActivity {
      */
     private void displayForPlayerB(int score) {
         scoreBView.setText(String.valueOf(score));
+    }
+
+    /**
+     * Displays the given bingo score for Player A.
+     */
+    private void displayBingosForPlayerA(int bingos) {
+        bingosAView.setText(String.valueOf(bingos));
+    }
+
+    /**
+     * Displays the given bingo score for Player B.
+     */
+    private void displayBingosForPlayerB(int bingos) {
+        bingosBView.setText(String.valueOf(bingos));
     }
 
     /**
